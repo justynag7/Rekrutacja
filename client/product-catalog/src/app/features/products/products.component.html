@@ -1,0 +1,25 @@
+@if (facade.state$ | async; as state) {
+  <header class="page-header">
+    <div>
+      <h1>Product Catalog</h1>
+      <p class="subtitle">{{ auth.displayName }} ({{ auth.email }})</p>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="btn-secondary" (click)="facade.load()" [disabled]="state.loading">
+        Odśwież
+      </button>
+      <button type="button" class="btn-secondary" (click)="logout()">Wyloguj</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <app-product-form
+      [saving]="state.saving"
+      [errorMessage]="state.saveError"
+      [successMessage]="state.saveSuccess" />
+    <app-product-list
+      [products]="state.products"
+      [loading]="state.loading"
+      [error]="state.error" />
+  </main>
+}

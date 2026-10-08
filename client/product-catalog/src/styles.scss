@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import './styles/theme';
+@import './styles/layout';
+@import './styles/forms';
+@import './styles/tables';
+@import './styles/components/login';
+@import './styles/components/products';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--pc-font);
+  color: var(--pc-text);
+  background: var(--pc-bg);
+  background-image: var(--pc-bg-accent);
+  background-attachment: fixed;
+}

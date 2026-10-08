@@ -1,0 +1,65 @@
+app-login {
+  display: block;
+  min-height: 100vh;
+}
+
+.background-panel {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #2e1065 0%, #6d28d9 48%, #c4b5fd 100%);
+}
+
+.login-card {
+  width: min(420px, 100%);
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 20px 50px rgba(46, 16, 101, 0.35);
+}
+
+.login-header {
+  background: linear-gradient(135deg, #3b0764 0%, #6d28d9 55%, #a78bfa 100%);
+  color: #f5f0ff;
+  padding: 1.75rem 1.5rem 1.35rem;
+  text-align: center;
+}
+
+.brand-mark {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 0.75rem;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.login-header .title {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.login-header .subtitle {
+  margin-top: 0.35rem;
+  opacity: 0.9;
+  font-size: 0.92rem;
+}
+
+.login-form {
+  padding: 1.35rem 1.5rem 1.5rem;
+  background: var(--pc-card);
+}
+
+.hint {
+  margin: 1rem 0 0;
+  text-align: center;
+  color: var(--pc-muted);
+  font-size: 0.78rem;
+}
+
+.hint code {
+  color: var(--pc-accent-deep);
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <title>Katalog produktów</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <section id="login-view" class="background-panel">
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Przełącz motyw">🌙 Ciemny</button>
+    <div class="card-panel login-card">
+      <div class="login-panel-header">
+        <div class="brand-mark">PC</div>
+        <div class="poppins-title">Katalog produktów</div>
+        <div class="subtitle">Panel logowania</div>
+      </div>
+      <form id="login-form" class="login-panel-form" autocomplete="on" novalidate>
+        <label class="field">
+          <span>Email</span>
+          <input id="login-email" type="email" name="email" placeholder="email" required maxlength="256" />
+        </label>
+        <label class="field">
+          <span>Hasło</span>
+          <input id="login-password" type="password" name="password" placeholder="hasło" required maxlength="128" autocomplete="current-password" />
+        </label>
+        <div id="login-error" class="status error" role="alert" hidden></div>
+        <div class="login-panel-buttons">
+          <button type="submit" class="button-primary" id="login-submit">Zaloguj</button>
+        </div>
+        <p class="hint">Demo: <code>admin@catalog.local</code> / <code>Admin123!</code></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="app-view" class="app-shell" hidden>
+    <header class="app-header">
+      <div>
+        <div class="poppins-title app-title">Katalog produktów</div>
+        <div class="subtitle" id="user-label"></div>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle compact" id="theme-toggle-app" aria-label="Przełącz motyw">🌙</button>
+        <button type="button" class="button-secondary" id="logout-btn">Wyloguj</button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="card-panel content-card">
+        <h2>Dodaj produkt</h2>
+        <form id="product-form" class="product-form" novalidate>
+          <label class="field">
+            <span>Kod</span>
+            <input id="product-kod" type="text" maxlength="32" required pattern="[A-Za-z0-9\-_.]+" placeholder="np. AU-1OZ" />
+          </label>
+          <label class="field">
+            <span>Nazwa</span>
+            <input id="product-nazwa" type="text" maxlength="200" required placeholder="Nazwa produktu" />
+          </label>
+          <label class="field">
+            <span>Cena</span>
+            <input id="product-cena" type="number" min="0.01" max="1000000" step="0.01" required placeholder="0.00" />
+          </label>
+          <div id="product-status" class="status" role="status" hidden></div>
+          <button type="submit" class="button-primary" id="product-submit">Dodaj do katalogu</button>
+        </form>
+      </section>
+
+      <section class="card-panel content-card">
+        <div class="list-header">
+          <h2>Lista produktów</h2>
+          <button type="button" class="button-secondary" id="refresh-btn">Odśwież</button>
+        </div>
+        <div id="products-error" class="status error" role="alert" hidden></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Kod</th>
+                <th>Nazwa</th>
+                <th>Cena</th>
+              </tr>
+            </thead>
+            <tbody id="products-tbody">
+              <tr><td colspan="3" class="empty">Ładowanie…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <script src="/js/app.js" type="module"></script>
+</body>
+</html>

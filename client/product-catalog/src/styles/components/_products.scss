@@ -1,0 +1,11 @@
+app-products,
+app-product-form,
+app-product-list {
+  display: block;
+}
+
+app-product-form h2,
+app-product-list h2 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}

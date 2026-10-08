@@ -1,0 +1,44 @@
+<section class="card">
+  <h2>Add product</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <label class="field">
+      <span>Code</span>
+      <input formControlName="code" maxlength="32" autocomplete="off" />
+      @if (form.controls.code.touched && form.controls.code.invalid) {
+        <small class="validation">
+          @if (form.controls.code.errors?.['required']) { Code is required. }
+          @else if (form.controls.code.errors?.['pattern']) { Use letters, digits, - _ . only. }
+          @else { Code is invalid. }
+        </small>
+      }
+    </label>
+
+    <label class="field">
+      <span>Name</span>
+      <input formControlName="name" maxlength="200" autocomplete="off" />
+      @if (form.controls.name.touched && form.controls.name.invalid) {
+        <small class="validation">Name is required (max 200 characters).</small>
+      }
+    </label>
+
+    <label class="field">
+      <span>Price</span>
+      <input formControlName="price" type="number" min="0.01" max="1000000" step="0.01" />
+      @if (form.controls.price.touched && form.controls.price.invalid) {
+        <small class="validation">Price must be greater than 0.</small>
+      }
+    </label>
+
+    @if (errorMessage) {
+      <div class="status error" role="alert">{{ errorMessage }}</div>
+    }
+    @if (successMessage) {
+      <div class="status success" role="status">{{ successMessage }}</div>
+    }
+
+    <button type="submit" class="btn-primary" [disabled]="form.invalid || saving">
+      {{ saving ? 'Saving…' : 'Add' }}
+    </button>
+  </form>
+</section>

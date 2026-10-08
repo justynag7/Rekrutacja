@@ -1,0 +1,31 @@
+<section class="background-panel">
+  <div class="login-card card-panel">
+    <div class="login-header">
+      <div class="brand-mark">PC</div>
+      <div class="title">Product Catalog</div>
+      <div class="subtitle">Panel logowania</div>
+    </div>
+
+    <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <label class="field">
+        <span>Email</span>
+        <input formControlName="email" type="email" autocomplete="username" />
+      </label>
+
+      <label class="field">
+        <span>Hasło</span>
+        <input formControlName="password" type="password" autocomplete="current-password" />
+      </label>
+
+      @if (error) {
+        <div class="status error" role="alert">{{ error }}</div>
+      }
+
+      <button type="submit" class="btn-primary" [disabled]="form.invalid || submitting">
+        {{ submitting ? 'Logowanie…' : 'Zaloguj' }}
+      </button>
+
+      <p class="hint">Demo: <code>admin&#64;catalog.local</code> / <code>Admin123!</code></p>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+:root {
+  --pc-bg: #f6f3fb;
+  --pc-bg-accent: linear-gradient(135deg, #efe8ff 0%, #f7f4fc 42%, #ebe4ff 100%);
+  --pc-card: #ffffff;
+  --pc-text: #2a1f45;
+  --pc-muted: #6b5f86;
+  --pc-border: #ddd0f2;
+  --pc-border-strong: #cbb8ea;
+  --pc-accent: #7c3aed;
+  --pc-accent-deep: #5b21b6;
+  --pc-accent-focus: rgba(124, 58, 237, 0.22);
+  --pc-btn-primary-bg: linear-gradient(135deg, #5b21b6 0%, #8b5cf6 100%);
+  --pc-btn-shadow: 0 6px 16px rgba(91, 33, 182, 0.28);
+  --pc-grid-header: linear-gradient(90deg, #5b21b6 0%, #7c3aed 55%, #a78bfa 100%);
+  --pc-row-even: #faf7ff;
+  --pc-row-hover: #f0e9ff;
+  --pc-danger: #b91c1c;
+  --pc-success: #166534;
+  --pc-card-shadow: 0 6px 18px rgba(76, 29, 149, 0.1);
+  --pc-input-bg: linear-gradient(180deg, #ffffff 0%, #faf7ff 100%);
+  --pc-font: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+}
